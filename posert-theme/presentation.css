@@ -172,7 +172,7 @@ div.inset {
     max-height: none;
 }
 
-span.emph {
+.emph {
     color: #3788BE;
     font-style: italic;
 }

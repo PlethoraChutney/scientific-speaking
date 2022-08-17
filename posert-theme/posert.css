@@ -6,9 +6,8 @@
  * reveal.js is Copyright (C) 2011-2012 Hakim El Hattab, http://hakim.se
  */
 @import url("https://fonts.googleapis.com/css2?family=JetBrains+Mono&family=Poppins&family=Zilla+Slab:wght@500&display=swap");
-p.fake-h2 {
+p.fake-title {
   font-family: "Zilla Slab", sans-serif;
-  font-size: 3em;
   color: #d26a5dff;
 }
 
