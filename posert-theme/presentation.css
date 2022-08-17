@@ -130,13 +130,12 @@ p.caption {
 
 p.citation {
     font-size: 8pt;
-    margin: 0;
     padding: 0;
+    width: max-content;
+    margin: auto;
 }
 
 p.bottom-left {
-    position: fixed;
-    top: 45vh;
     left: 0;
 }
 

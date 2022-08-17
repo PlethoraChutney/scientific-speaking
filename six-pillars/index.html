@@ -19,9 +19,51 @@
 <section
 data-background-image="images/parthenon.jpg"
 >
+    <h1 class="top-left" style="color: #f5bf6d">The Six Pillars</h1>
+    <p style="color: white;">Please take a sheet of paper on your way in, and a pen if you need one</p>
     <div class="r-stretch">
-        <h1 class="top-left" style="color: #f5bf6d">The Six Pillars</h1>
-        <p class="bottom-left" style="color: white;">The Parthenon, Frederic Edwin Church, 1871</p>
+    </div>
+    <p class="bottom-left" style="color: white;">The Parthenon, Frederic Edwin Church, 1871</p>
+
+</section>
+
+<section>
+    <h2>Warmup</h2>
+    <div class="read-text">
+        <p>
+            For five minutes, think about a compelling scientific (or pop-sci) talk
+            you've seen. Write down what made it feel compelling to you. Bullets are
+            fine, or full sentences. You'll be sharing these with a partner but not
+            the whole class.
+        </p>
+        <p class="fragment" id="freewrite-timer">
+            Time remaining: <span id="time-remaining"></span>
+        </p>
+        <p class="fragment">
+            Share your list with a partner. You'll each have 2 minutes to talk
+            about your list.
+        </p>
+        <p class="fragment" id="first-partner">
+            First partner: <span id="first-partner-timer"></span>
+        </p>
+        <p class="fragment" id="second-partner">
+            Second partner: <span id="second-partner-timer"></span>
+        </p>
+    </div>
+</section>
+
+<section>
+    <h2>Disclaimer</h2>
+    <div class="read-text">
+        <p>
+            These "pillars" are adapted from John Williams's <span class="emph">Think about talks</span>
+        </p>
+        <p>
+            I'm presenting them in order of my opinion of their approximate importance
+        </p>
+        <p>
+            For you, the order might be different!
+        </p>
     </div>
 </section>
 
@@ -125,6 +167,23 @@ data-background-image="images/parthenon.jpg"
     <p class="fragment">Sometimes you'll bomb.</p>
 </section>
 
+<section data-auto-animate="" data-background-image="images/hansel-gretel.png">
+    <h1 style="color: black; text-align: right;">Acknowledge your audience</h1>
+    <div class="r-stretch"></div>
+    <p class="citation" style="background-color: #FFFFFF;">Hansel and Gretel, Heinrich Merte</p>
+</section>
+
+<section data-auto-animate="" data-background-image="images/roller-coaster.jpg">
+    <h1 style="color: black; text-align: right;">Acknowledge your audience</h1>
+    <div class="r-stretch"></div>
+    <p class="citation">Shutterstock</p>
+</section>
+
+<section>
+    <h2>Your audience wants you to succeed</h2>
+    <p class="fragment">We'll discuss this in greater detail when we talk about audience management</p>
+</section>
+
 <!-- First Pillar//One -->
 
 <section data-auto-animate data-background-image="images/icarus.jpg">
@@ -201,18 +260,6 @@ data-background-image="images/parthenon.jpg"
         <img src="images/driving-happiness.png" alt="" class="bordered">
     </div>
 </section>
-<section data-auto-animate="">
-    <h2>One Idea On Every Slide</h2>
-    <div class="r-stretch fit-two">
-        <img src="images/happiness.png" alt="" class="bordered">
-        <img src="images/driving-happiness.png" alt="" class="bordered">
-    </div>
-    <p>
-        The point here is, we didn't
-        lose anyone to trying to figure out what's going on with these
-        graphs.
-    </p>
-</section>
 
 <!-- Third Pillar: Explain Every Slide Completely -->
 
@@ -223,7 +270,7 @@ data-background-image="images/parthenon.jpg"
 <!-- Fourth Pillar: Work Performed by Collaborators -->
 
 <section>
-    <h2 style="font-size: 5em;">Presenting Work You Haven't Done</h2>
+    <h1>Know your collaborators' work</h1>
 </section>
 
 <!-- Fifth Pillar: End On Time -->
@@ -234,11 +281,50 @@ data-background-image="images/parthenon.jpg"
 <section data-auto-animate="">
     <h2>End On Time</h2>
     <p>General rule of thumb: one slide is one minute</p>
+    <p class="fragment">If you follow this rule blindly you'll never end on time</p>
 </section>
 
 <!-- Sixth Pillar: Practice -->
+<section data-auto-animate="">
+    <h2 style="font-size: 5em;">Practice</h2>
+</section>
+
+<section data-auto-animate="" data-background-image="images/before-after.jpg">
+    <h2 style="color: black;">Practice</h2>
+    <div class="r-stretch"></div>
+    <p class="citation">Betty Edwards, Drawing on the Right Side of the Brain</p>
+</section>
+
 <section>
-    <h1>Practice</h1>
+    <h1>Six Pillars</h1>
+    <ol>
+        <li>Present one story</li>
+        <li>One idea per slide</li>
+        <li>Explain every slide completely</li>
+        <li>Know your collaborators' work</li>
+        <li>End on time</li>
+        <li>Practice</li>
+    </ol>
+</section>
+
+<section>
+    <h3>For the rest of class, in groups of two or three:</h3>
+    <ol>
+        <li>Pick a topic</li>
+        <li>Work together to develop a compelling story</li>
+        <ul>
+            <li>Feel free to ignore our preference for Icarus, but make sure it's a narrative</li>
+            <li>Make special note of the <span class="emph">main point</span> of the narrative</li>
+        </ul>
+        <li>Split that story into single slides</li>
+        <li>Practice running through your "slides" together</li>
+    </ol>
+    <div style="padding: 2em;"><hr></div>
+    <h3>Homework:</h3>
+    <ul>
+        <li>Submit the narrative you come up with to sakai/email</li>
+        <li>Send 1 slide with a hobby you enjoy or would like to try in grad school</li>
+    </ul>
 </section>
 
 </div>
@@ -255,6 +341,66 @@ data-background-image="images/parthenon.jpg"
             slideNumber: 'c/t',
             width: 1200
         });
+    </script>
+    
+    <script>
+        Reveal.on('fragmentshown', event => {
+            if (event.fragment.id === 'freewrite-timer') {
+                const timerHolder = document.querySelector('#time-remaining');
+                let timeRemaining = 300;
+
+                function reduceTimer() {
+                    if (timeRemaining >= 0) {
+                        let minutes = Math.floor(timeRemaining / 60);
+                        let seconds = (timeRemaining % 60).toLocaleString(
+                            'en-US',
+                            {'minimumIntegerDigits': 2}
+                        );
+                        timerHolder.innerHTML = `${minutes}:${seconds}`;
+                        timeRemaining -= 1;
+                        window.setTimeout(reduceTimer, 1000);
+                    }
+                }
+                
+                reduceTimer();
+            } else if (event.fragment.id === 'first-partner') {
+                const timerHolder = document.querySelector('#first-partner-timer');
+                let timeRemaining = 120;
+
+                function reduceTimer() {
+                    if (timeRemaining >= 0) {
+                        let minutes = Math.floor(timeRemaining / 60);
+                        let seconds = (timeRemaining % 60).toLocaleString(
+                            'en-US',
+                            {'minimumIntegerDigits': 2}
+                        );
+                        timerHolder.innerHTML = `${minutes}:${seconds}`;
+                        timeRemaining -= 1;
+                        window.setTimeout(reduceTimer, 1000);
+                    }
+                }
+                
+                reduceTimer();
+            } else if (event.fragment.id === 'second-partner') {
+                const timerHolder = document.querySelector('#second-partner-timer');
+                let timeRemaining = 120;
+
+                function reduceTimer() {
+                    if (timeRemaining >= 0) {
+                        let minutes = Math.floor(timeRemaining / 60);
+                        let seconds = (timeRemaining % 60).toLocaleString(
+                            'en-US',
+                            {'minimumIntegerDigits': 2}
+                        );
+                        timerHolder.innerHTML = `${minutes}:${seconds}`;
+                        timeRemaining -= 1;
+                        window.setTimeout(reduceTimer, 1000);
+                    }
+                }
+                
+                reduceTimer();
+            }
+        })
     </script>
   </body>
 </html>
