@@ -177,6 +177,10 @@ div.inset {
     max-height: none;
 }
 
+.reveal li {
+    margin-bottom: 0.5em;
+}
+
 .emph {
     color: #3788BE;
     font-style: italic;
