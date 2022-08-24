@@ -126,10 +126,45 @@ data-background-image="images/george-bellows_new-york.jpg"
     </div>
 </section>
 
+<section>
+    <h2>Fabs dominating alignment</h2>
+    <div class="r-stretch fit-one">
+        <video src="images/132-spin.mp4" class="bordered" data-autoplay></video>
+    </div>
+</section>
+
+<section>
+    <h2>Compare that with:</h2>
+</section>
+
+<section data-auto-animate="">
+    <h2>Fabs dominating alignment</h2>
+    <div class="fit-two im-cap r-stretch">
+        <p>Fabs may align <span class="emph">too well</span></p>
+        <div class="r-stack">
+            <img src="images/cartoon.png" alt="" class="bordered">
+            <img id="blur-tmd" src="images/cartoon-blur.png" alt="" class="bordered fragment" data-fragment-index="1">
+            <img id="blur-fabs" src="images/cartoon-fab-blur.png" alt="" class="bordered fragment" data-fragment-index="2">
+        </div>
+        <p id="cartoon-blur-describer">An ideal world, where all particles are identical</p>
+    </div>
+</section>
+<section data-auto-animate="">
+    <h2>Fabs dominating alignment</h2>
+    <div class="fit-two r-stretch">
+        <img id="blur-fabs" src="images/cartoon-blur.png" alt="" class="bordered">
+        <img src="images/enac-cartoon.png" alt="" class="bordered">
+    </div>
+</section>
+
+<section data-auto-animate="">
+    <h2 style="font-size: 5em;">Answering a question</h2>
+</section>
+
 <section data-auto-animate="">
     <h2>Answering a question</h2>
     <div class="r-stack">
-        <img style="width: 500px;" class="fragment bordered" src="images/answering-questions_first.svg" alt="">
+        <img style="width: 500px;" class="bordered" src="images/answering-questions_first.svg" alt="">
         <img style="width: 500px;" src="images/answering-questions_yes.svg" alt="" class="fragment bordered">
         <img style="width: 500px;" src="images/answering-questions_no.svg" alt="" class="fragment bordered">
         <img style="width: 500px;" src="images/answering-questions_no-fine.svg" alt="" class="fragment bordered">
@@ -193,69 +228,31 @@ data-background-image="images/george-bellows_new-york.jpg"
             width: 1200
         });
 
+        const updateBlurDescriber = text => 
+            document.getElementById('cartoon-blur-describer').innerText = text;
+
+
         Reveal.on('fragmentshown', event => {
             if (event.fragment.id === 'strikethrough-provesmart') {
                 document.querySelector('#provesmart').classList.add('strikethrough');
-            } else if (event.fragment.id === 'freewrite-timer') {
-                const timerHolder = document.querySelector('#time-remaining');
-                let timeRemaining = 300;
-
-                function reduceTimer() {
-                    if (timeRemaining >= 0) {
-                        let minutes = Math.floor(timeRemaining / 60);
-                        let seconds = (timeRemaining % 60).toLocaleString(
-                            'en-US',
-                            {'minimumIntegerDigits': 2}
-                        );
-                        timerHolder.innerHTML = `${minutes}:${seconds}`;
-                        timeRemaining -= 1;
-                        window.setTimeout(reduceTimer, 1000);
-                    }
-                }
-                
-                reduceTimer();
-            } else if (event.fragment.id === 'first-partner') {
-                const timerHolder = document.querySelector('#first-partner-timer');
-                let timeRemaining = 120;
-
-                function reduceTimer() {
-                    if (timeRemaining >= 0) {
-                        let minutes = Math.floor(timeRemaining / 60);
-                        let seconds = (timeRemaining % 60).toLocaleString(
-                            'en-US',
-                            {'minimumIntegerDigits': 2}
-                        );
-                        timerHolder.innerHTML = `${minutes}:${seconds}`;
-                        timeRemaining -= 1;
-                        window.setTimeout(reduceTimer, 1000);
-                    }
-                }
-                
-                reduceTimer();
-            } else if (event.fragment.id === 'second-partner') {
-                const timerHolder = document.querySelector('#second-partner-timer');
-                let timeRemaining = 120;
-
-                function reduceTimer() {
-                    if (timeRemaining >= 0) {
-                        let minutes = Math.floor(timeRemaining / 60);
-                        let seconds = (timeRemaining % 60).toLocaleString(
-                            'en-US',
-                            {'minimumIntegerDigits': 2}
-                        );
-                        timerHolder.innerHTML = `${minutes}:${seconds}`;
-                        timeRemaining -= 1;
-                        window.setTimeout(reduceTimer, 1000);
-                    }
-                }
-                
-                reduceTimer();
+            } else if (event.fragment.id === "blur-tmd") {
+                updateBlurDescriber('Particles differ, Fabs preferentially aligned');
+            } else if (event.fragment.id === 'blur-fabs') {
+                updateBlurDescriber('Particles differ, ENaC preferentially aligned');
+            } else if (event.fragment.id === 'play-pko-zoom') {
+                document.getElementById('pko-zoom').play();
             }
         })
 
         Reveal.on('fragmenthidden', event => {
             if (event.fragment.id === 'strikethrough-provesmart') {
                 document.querySelector('#provesmart').classList.remove('strikethrough');
+            } else if (event.fragment.id === "blur-tmd") {
+                updateBlurDescriber('An ideal world, where all particles are identical');
+            } else if (event.fragment.id === 'blur-fabs') {
+                updateBlurDescriber('Particles differ, Fabs preferentially aligned');
+            } else if (event.fragment.id === 'play-pko-zoom') {
+                document.getElementById('pko-zoom').play();
             }
         })
     </script>

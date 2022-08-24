@@ -47,7 +47,7 @@ div.fit-one, div.fit-two, div.fit-three {
     vertical-align: middle;
 }
 
-div.fit-one.r-stretch > img, div.fit-one.r-stretch > video {
+div.fit-one.r-stretch > img, div.fit-one.r-stretch > video, div.fit-one.r-stretch > div {
     max-height: 100%;
 }
 
